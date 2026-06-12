@@ -2,25 +2,19 @@
   "name": "@lamesa/angular",
   "version": "0.1.0",
   "type": "module",
-  "exports": {
-    ".": {
-      "sass": "./src/styles.scss",
-      "import": "./fesm2022/lamesa-angular.mjs",
-      "default": "./fesm2022/lamesa-angular.mjs"
-    }
-  },
   "scripts": {
     "build": "ng-packagr -p ng-package.json"
   },
   "dependencies": {
-    "@lamesa/core": "workspace:*"
+    "tslib": "^2.6.2"
   },
   "peerDependencies": {
-    "@angular/common": "^19.0.0 || ^20.0.0",
-    "@angular/core": "^19.0.0 || ^20.0.0"
-  },
+		"@angular/core": "^19.0.0 || ^20.0.0",
+		"@angular/common": "^19.0.0 || ^20.0.0",
+		"@lamesa/core": "workspace:*"
+	},
   "devDependencies": {
-    "ng-packagr": "^19.0.0 || ^20.0.0",
-    "typescript": "~5.8.0"
+    "ng-packagr": "^20.0.0",
+    "typescript": "^5.9.3"
   }
 }

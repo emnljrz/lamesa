@@ -12,11 +12,12 @@ import { TableCore } from '@lamesa/core';
 import { LaMesaContext } from './types';
 
 @Directive({
-  name: '[laMesa]',
+  selector: '[laMesa]',
   standalone: true
 })
 export class LaMesaDirective implements OnInit, OnDestroy {
-  private templateRef = inject(TemplateRef<LaMesaContext>);
+  // Added any fallback to TemplateRef to keep ng-packagr happy if LaMesaContext lacks a generic signature
+  private templateRef = inject(TemplateRef<LaMesaContext | any>);
   private viewContainer = inject(ViewContainerRef);
 
   // The headless engine instance passed from the parent component
@@ -26,7 +27,7 @@ export class LaMesaDirective implements OnInit, OnDestroy {
   public tableState = signal<any>(null);
   private unsubscribeFn?: () => void;
 
-  ngOnInit(): OnInit {
+  ngOnInit(): void {
     if (!this.tableInstance) {
       throw new Error('LaMesa Directive Error: You must provide a valid [laMesa] TableCore instance.');
     }
