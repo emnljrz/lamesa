@@ -3,7 +3,7 @@
 `@lamesa/core` • `@lamesa/csv-parser` • `@lamesa/angular`
 
 [![CI](https://github.com/emnljrz/lamesa/actions/workflows/ci.yml/badge.svg)](https://github.com/emnljrz/lamesa/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/emnljrz/lamesa/graph/badge.svg?token=YOUR_CODECOV_GRAPH_TOKEN)](https://codecov.io/gh/emnljrz/lamesa)
+[![codecov](https://codecov.io/gh/emnljrz/lamesa/graph/badge.svg?token=YOUR_UNIQUE_TOKEN)](https://codecov.io/gh/emnljrz/lamesa)
 
 ---
 
