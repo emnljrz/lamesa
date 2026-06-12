@@ -332,9 +332,7 @@ describe('LaMesa Core Engine', () => {
 					['role', { id: 'role', accessorKey: 'role' }],
 				]),
 				_editManager: {
-					getOverlayValue: vi.fn((rowId, colId) => {
-							return (rowId === '1' && colId === 'name') ? 'Carlos' : undefined;
-					}),
+					getOverlayValue: vi.fn((rowId, colId) => overlayMap.get(`${rowId}_${colId}`)),
 					isEditing: vi.fn((rowId, colId) => rowId === '1' && colId === 'name'),
 					isDirty: vi.fn((rowId, colId) => rowId === '1' && colId === 'name'),
 					getEditingCell: vi.fn(() => ({ rowId: '1', columnId: 'name' })),
