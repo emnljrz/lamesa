@@ -2,6 +2,7 @@
   "name": "lamesa",
   "private": true,
   "version": "0.0.0",
+  "packageManager": "pnpm@10.34.2",
   "description": "LaMesa monorepo — headless table engine",
   "scripts": {
     "test": "pnpm -r test",
