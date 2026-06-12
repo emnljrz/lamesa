@@ -4,12 +4,9 @@ import { describe, test, expect, vi } from 'vitest';
 import { TableCore } from '../src/table-core';
 import { createColumn, ColumnDef } from '../src/column';
 import { EditManager } from '../src/edit-manager';
-import { Row, resolvePath } from '../src/row';
+import { Row } from '../src/row';
 import { Pipeline, DIRTY } from '../src/pipeline';
 
-// Built-in filter/sort functions
-import { filterFns } from '../src/filter-fns';
-import { sortFns } from '../src/sort-fns';
 
 interface ItemRecord {
   id: number;
