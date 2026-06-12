@@ -1,0 +1,26 @@
+{
+  "name": "@lamesa/angular",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "sass": "./src/styles.scss",
+      "import": "./fesm2022/lamesa-angular.mjs",
+      "default": "./fesm2022/lamesa-angular.mjs"
+    }
+  },
+  "scripts": {
+    "build": "ng-packagr -p ng-package.json"
+  },
+  "dependencies": {
+    "@lamesa/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "@angular/common": "^19.0.0 || ^20.0.0",
+    "@angular/core": "^19.0.0 || ^20.0.0"
+  },
+  "devDependencies": {
+    "ng-packagr": "^19.0.0 || ^20.0.0",
+    "typescript": "~5.5.4"
+  }
+}

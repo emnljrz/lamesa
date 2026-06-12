@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output directories
+# Since you have 'dist' inside your packages, this covers them
+dist/
+build/
+*.tsbuildinfo
+
+# IDE / Editor folders
+.vscode/
+.idea/
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.local
+
+# Optional: If you use coverage reports in tests
+coverage/
+
+# OS-specific junk
+Thumbs.db
