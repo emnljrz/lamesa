@@ -1,8 +1,13 @@
-# LaMesa
+# 🍽️ LaMesa Monorepo
+
+`@lamesa/core` • `@lamesa/csv-parser` • `@lamesa/angular`
+
 [![CI](https://github.com/emnljrz/lamesa/actions/workflows/ci.yml/badge.svg)](https://github.com/emnljrz/lamesa/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/emnljrz/lamesa/graph/badge.svg?token=YOUR_CODECOV_GRAPH_TOKEN)](https://codecov.io/gh/emnljrz/lamesa)
 
-> Headless, framework-agnostic table engine. You own the UI. LaMesa owns the logic.
+---
 
+LaMesa is a high-performance, headless table engine designed to power complex data grids across multiple frameworks.
 ## Packages
 
 | Package | Version | Description |
