@@ -1,4 +1,5 @@
 # LaMesa
+[![CI](https://github.com/emnljrz/lamesa/actions/workflows/ci.yml/badge.svg)](https://github.com/emnljrz/lamesa/actions/workflows/ci.yml)
 
 > Headless, framework-agnostic table engine. You own the UI. LaMesa owns the logic.
 
