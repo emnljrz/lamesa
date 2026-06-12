@@ -4,11 +4,44 @@
  * Structural token data normalizer.
  * Combines structural header tokens with row matrices, mapping individual 
  * string values into primitives through adaptive type inference.
+ *
+ * Unit Fallbacks: forces normalizer array mismatch branches directly (lines 27-28)
  */
 import { inferType } from './inferrer';
 
 export interface CsvNormalizerOptions {
   dynamicTyping?: boolean;
+}
+
+/**
+ * Normalizes a single raw row array against explicit column headers.
+ * Exported separately to support core parser unit fallback diagnostics.
+ *
+ * @param row - An array of raw cell strings representing a single line.
+ * @param headers - Cleaned and finalized schema column headings.
+ * @param dynamicTyping - Toggles primitive classification engines.
+ * @returns A structured record mapping header strings to parsed cell properties.
+ */
+export function normalizeRow(
+  row: string[],
+  headers: string[],
+  dynamicTyping: boolean = true
+): Record<string, any> {
+  const rowObject: Record<string, any> = {};
+
+  headers.forEach((header, index) => {
+    const rawValue = row[index];
+    
+    // Lines 27-28 (Array Mismatch Fallback branch):
+    // Handle trailing missing elements gracefully if a row breaks prematurely
+    if (rawValue === undefined) {
+      rowObject[header] = null;
+    } else {
+      rowObject[header] = dynamicTyping ? inferType(rawValue) : rawValue;
+    }
+  });
+
+  return rowObject;
 }
 
 /**
@@ -37,21 +70,8 @@ export function normalizeTokens<T = Record<string, any>>(
     return sanitized || `column_${index}`;
   });
 
-  // 2. Map data rows into structured JSON collections
+  // 2. Map data rows into structured JSON collections using the extracted helper
   return dataRows.map((row) => {
-    const rowObject = {} as Record<string, any>;
-
-    headers.forEach((header, index) => {
-      const rawValue = row[index];
-      
-      // Handle trailing missing elements gracefully if a row breaks prematurely
-      if (rawValue === undefined) {
-        rowObject[header] = null;
-      } else {
-        rowObject[header] = dynamicTyping ? inferType(rawValue) : rawValue;
-      }
-    });
-
-    return rowObject as T;
+    return normalizeRow(row, headers, dynamicTyping) as T;
   });
 }

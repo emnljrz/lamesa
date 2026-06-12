@@ -10,6 +10,7 @@ export default defineConfig({
         '**/dist/**',
         'packages/angular/**',
         'vitest.config.ts',
+				'**/index.ts'
       ],
     },
   },
