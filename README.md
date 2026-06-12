@@ -3,8 +3,9 @@
 `@lamesa/core` • `@lamesa/csv-parser` • `@lamesa/angular`
 
 [![CI](https://github.com/emnljrz/lamesa/actions/workflows/ci.yml/badge.svg)](https://github.com/emnljrz/lamesa/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/emnljrz/lamesa/graph/badge.svg?token=YOUR_UNIQUE_TOKEN)](https://codecov.io/gh/emnljrz/lamesa)
-
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=emnljrz_lamesa&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=emnljrz_lamesa)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=emnljrz_lamesa&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=emnljrz_lamesa)
+[![Codecov](https://codecov.io/gh/emnljrz/lamesa/graph/badge.svg?token=YOUR_TOKEN)](https://codecov.io/gh/emnljrz/lamesa)
 ---
 
 LaMesa is a high-performance, headless table engine designed to power complex data grids across multiple frameworks.
